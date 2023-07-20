@@ -1,1 +1,1 @@
-from Title import Title
+from Objects.Title import Title

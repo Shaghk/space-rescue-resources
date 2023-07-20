@@ -1,5 +1,4 @@
 from GameFrame import Level
- 
 from Objects.Title import Title
 
 class WelcomeScreen(Level):
