@@ -1,4 +1,5 @@
 from GameFrame import RoomObject
+import pygame
 
 class Ship(RoomObject):
     """
@@ -14,3 +15,6 @@ class Ship(RoomObject):
         # set image
         image = self.load_image("Ship.png")
         self.set_image(image,100,100)
+
+        #register events
+        self.handle_key_events = True
