@@ -18,3 +18,27 @@ class Ship(RoomObject):
 
         #register events
         self.handle_key_events = True
+    def key_pressed(self, key):
+        """
+        Respond to keypress up and down
+        """
+        
+        if key[pygame.K_w]:
+            self.y_speed = -10
+        elif key[pygame.K_s]:
+            self.y_speed = 10
+
+    def keep_in_room(self):
+        """
+        Keeps the ship inside the room
+        """
+        if self.y < 0:
+            self.y = 0
+        elif self.y + self.height> Globals.SCREEN_HEIGHT:
+            self.y = Globals.SCREEN_HEIGHT - self.height
+            
+    def step(self):
+        """
+        Determine what happens to the Ship on each click of the game clock
+        """
+        self.keep_in_room()
