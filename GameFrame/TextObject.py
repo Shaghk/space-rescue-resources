@@ -23,3 +23,7 @@ class TextObject(RoomObject):
         self.image = self.rendered_text
         self.width, self.height = self.built_font.size(self.text)
         self.rect = pygame.Rect(self.x, self.y, self.width, self.height)
+# - Main Game Loop. Steps through the levels defined in levels[] - #
+def __init__(joysticks, screen, class_name):
+    room = class_name(screen, joysticks)
+    return room
